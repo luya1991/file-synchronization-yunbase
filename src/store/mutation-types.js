@@ -1,0 +1,6 @@
+export const CONTAINER_LOAD_START = 'LOAD_START'
+export const CONTAINER_LOAD_END = 'LOAD_END'
+export const CONTAINER_SET_USER = 'SET_USER'
+
+export const MENU_TOGGLE_COLLAPSE = 'TOGGLE_COLLAPSE'
+export const MENU_SET_DATA = 'SET_DATA'
