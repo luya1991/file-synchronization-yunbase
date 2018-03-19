@@ -38,6 +38,11 @@ export default {
       this.$router.push({ name: item.resourceCode})
     }
   },
+  // mounted() {
+  //   var item = {}
+  //   item.resourceCode = window.location.href.split('/')[window.location.href.split('/').length-1]
+  //   setTimeout(() => { this.select(item) }, 1000)
+  // },
   computed: {
     ...mapState({
       collapse: state => state.menu.collapse,
