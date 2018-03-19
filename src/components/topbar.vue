@@ -2,7 +2,7 @@
   <header class="topbar">
     <div class="topbar-wrap">
       <div class="topbar-left">
-        <a class="branding-icon topbar-item" href="//www.yundev.com:8011/index.html"><i></i></a>
+        <a class="branding-icon topbar-item" href="/"><i></i></a>
         <a class="branding-info topbar-item" href="/"><span>{{brand}}</span></a>
       </div>
       <div class="topbar-right">
@@ -49,7 +49,7 @@ export default {
   }),
   data() {
     return {
-      brand: '中国电信文件同步系统',
+      brand: '数据同步与系统迁移',
       domain: ''
     }
   },
