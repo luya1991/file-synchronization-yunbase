@@ -3,7 +3,7 @@
     <div class="topbar-wrap">
       <div class="topbar-left">
         <a class="branding-icon topbar-item" href="/"><i></i></a>
-        <a class="branding-info topbar-item" href="/"><span>{{brand}}</span></a>
+        <a class="branding-info topbar-item" href="/#/welcom"><span>{{brand}}</span></a>
       </div>
       <div class="topbar-right">
         <ui-select v-if="user.accountType === 0" v-model="teamId" class="topbar-item tenant" :class="{'tenant-u': teamType === 1, 'tenant-us': teamType === 2}">
@@ -49,7 +49,7 @@ export default {
   }),
   data() {
     return {
-      brand: '数据同步与系统迁移',
+      brand: '中国电信数据同步与系统迁移平台',
       domain: ''
     }
   },
@@ -119,7 +119,7 @@ header.topbar {
     }
     .topbar-left {
       float: left;
-      width: $sidebar-width + $sidebar-collapsed-width;
+      width: $sidebar-width + $sidebar-collapsed-width + 100px;
       border-right: $topbar-border;
       height: 100%;
       display: flex;
