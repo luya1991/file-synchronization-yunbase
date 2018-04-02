@@ -8,6 +8,7 @@ import containerModl from './store/modules/container'
 import topbar from './components/topbar'
 import sidebar from './components/sidebar'
 import menu from './store/modules/menu'
+import login from './store/modules/loginState'
 import getters from './store/getters'
 import axios from 'axios'
 
@@ -48,7 +49,8 @@ class Base {
     this.store_ = new Vuex.Store({
       modules: Object.assign({}, modules, {
         container: containerModl,
-        menu
+        menu,
+        login
       }),
       getters,
       strict: debug,

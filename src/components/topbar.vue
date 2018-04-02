@@ -30,7 +30,8 @@
             <ui-dropdown-item><a :href="domain + '/iam.html#/account/info'"><ui-icon name="cogs"></ui-icon>账号设置</a></ui-dropdown-item>
             <ui-dropdown-item><a :href="domain + '/iam.html#/company/mine'"><ui-icon name="users"></ui-icon>我的企业</a></ui-dropdown-item>
             <ui-dropdown-item v-if="userSystem"><a :href="domain + '/iam.html#/system/company/info/'"><ui-icon name="cog"></ui-icon>系统设置</a></ui-dropdown-item>
-            <ui-dropdown-item class="user-exit"><a href="./logout">退出账号</a></ui-dropdown-item>
+            <ui-dropdown-item class="user-exit"><a @click="logout()" style="min-height: 10px !import">退出账号</a></ui-dropdown-item>
+            <!-- <ui-dropdown-item class="user-exit"><a href="./logout">退出账号</a></ui-dropdown-item> -->
           </ui-dropdown-menu>
         </ui-dropdown>
       </div>
@@ -44,9 +45,19 @@ import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'topbar',
-  methods: mapActions({
-    setUser: 'container/setUser'
-  }),
+  // methods: mapActions({
+  //   setUser: 'container/setUser'
+  // }),
+  methods: {
+    ...mapActions({
+      setUser: 'container/setUser'
+    }),
+    logout() {
+      sessionStorage.setItem('isLogin', false)
+      this.$store.commit('login')
+      console.log(JSON.parse(sessionStorage.getItem('isLogin')))
+    }
+  },
   data() {
     return {
       brand: '中国电信数据同步与系统迁移平台',
