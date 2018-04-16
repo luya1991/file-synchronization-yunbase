@@ -101,8 +101,9 @@ nav.sidebar {
       line-height: $menu-item-height;
       overflow: hidden;
       text-overflow: ellipsis;
-      &:hover,
-      &:focus {
+      &:hover
+      /* ,&:focus */
+       {
         background: #26486d;
       }
       &.is-active {
