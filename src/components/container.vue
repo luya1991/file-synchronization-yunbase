@@ -34,12 +34,12 @@ export default {
 .container {
   position: absolute;
   top: $topbar-height;
-  left: 20px;
+  left: $sidebar-width;
   right: 20px;
   bottom: 10px;
   .main-cont {
     position: absolute;
-    left: $sidebar-width;
+    left: 20px;
     top: 0;
     bottom: 0;
     right: 0;
