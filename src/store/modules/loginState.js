@@ -1,7 +1,9 @@
 const mutations = {
-  login(state) {
-  	console.log(JSON.parse(sessionStorage.getItem('isLogin')))
-    state.isLogin = JSON.parse(sessionStorage.getItem('isLogin'))
+  updateUserInfo(state) {
+  	// console.log(JSON.parse(sessionStorage.getItem('isLogin')))
+  	// console.log(JSON.parse(sessionStorage.getItem('token')))
+    state.isLogin = sessionStorage.getItem('isLogin')
+    state.token = sessionStorage.getItem('token')
   }
 }
 

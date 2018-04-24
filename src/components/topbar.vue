@@ -55,8 +55,10 @@ export default {
     }),
     logout() {
       sessionStorage.setItem('isLogin', false)
-      this.$store.commit('login')
-      console.log(JSON.parse(sessionStorage.getItem('isLogin')))
+      sessionStorage.setItem('token', '')
+      // this.$store.commit('login')
+      this.$store.commit('updateUserInfo')
+      this.$router.push({ path: '/login' })
     }
   },
   data() {
