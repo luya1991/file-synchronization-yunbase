@@ -11,6 +11,9 @@
         </div>
       </div>
       <router-view v-else></router-view>
+      <!-- <keep-alive v-else>
+        <router-view></router-view>
+      </keep-alive> -->
     </div>
   </div>
 </template>
