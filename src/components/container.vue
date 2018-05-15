@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="{collapsed: collapse}">
+  <div class="container" :class="{collapsed: collapse}" v-if="$store.state.login.isLogin">
     <!-- <menubar></menubar> -->
     <div class="main-cont">
       <div v-if="loading" class="loading">

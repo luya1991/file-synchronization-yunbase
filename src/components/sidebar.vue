@@ -1,5 +1,5 @@
 <template>
-  <nav class="sidebar" :class="{collapsed: collapse}">
+  <nav class="sidebar" :class="{collapsed: collapse}" v-if="$store.state.login.isLogin">
     <div class="menu">
       <ui-menu v-if="menu.length" :collapse="collapse" :default-active="current" >
       <template v-for="item in menu">

@@ -1,5 +1,5 @@
 <template>
-  <header class="topbar">
+  <header class="topbar" v-if="$store.state.login.isLogin">
     <div class="topbar-wrap">
       <div class="topbar-left">
         <a class="branding-icon topbar-item" href="/"><i></i></a>
@@ -30,8 +30,8 @@
             <ui-dropdown-item><a :href="domain + '/iam.html#/account/info'"><ui-icon name="cogs"></ui-icon>账号设置</a></ui-dropdown-item>
             <ui-dropdown-item><a :href="domain + '/iam.html#/company/mine'"><ui-icon name="users"></ui-icon>我的企业</a></ui-dropdown-item>
             <ui-dropdown-item v-if="userSystem"><a :href="domain + '/iam.html#/system/company/info/'"><ui-icon name="cog"></ui-icon>系统设置</a></ui-dropdown-item>
-            <ui-dropdown-item class="user-exit"><router-link @click="logout()" to="logout">退出账号</router-link></ui-dropdown-item>
-            <!-- <ui-dropdown-item class="user-exit"><a @click="logout()" style="min-height: 10px !import">退出账号</a></ui-dropdown-item> -->
+            <!-- <ui-dropdown-item class="user-exit"><router-link @click="logout()" to="logout">退出账号</router-link></ui-dropdown-item> -->
+            <ui-dropdown-item class="user-exit"><a @click="logout()" style="min-height: 10px !import">退出账号</a></ui-dropdown-item>
             <!-- <ui-dropdown-item class="user-exit"><a href="./logout">退出账号</a></ui-dropdown-item> -->
           </ui-dropdown-menu>
         </ui-dropdown>
