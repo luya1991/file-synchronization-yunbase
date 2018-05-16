@@ -1,5 +1,5 @@
 <template>
-  <header class="topbar" v-if="$store.state.login.isLogin">
+  <header class="topbar" >
     <div class="topbar-wrap">
       <div class="topbar-left">
         <a class="branding-icon topbar-item" href="/"><i></i></a>

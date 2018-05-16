@@ -38,6 +38,9 @@ class Base {
 
     Vue.use(Router)
     opts.pages && opts.pages.keys().forEach(key => {
+      // if (key.indexOf('login') < 0) {
+      //   routes = routes.concat(opts.pages(key).default)
+      // }
       routes = routes.concat(opts.pages(key).default)
     })
     this.router_ = new Router({ routes })
@@ -59,7 +62,6 @@ class Base {
 
     this.router_.beforeEach(async (to, from, next) => {
       this.store_.dispatch('container/loadStart')
-
       // if (this.store_.state.menu.data.length === 0) {
       //   const teamId = sessionStorage.getItem('teamId')
       //   if (teamId) {

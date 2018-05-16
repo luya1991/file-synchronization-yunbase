@@ -7,8 +7,10 @@ const mutations = {
     } else {
       state.isLogin = false
     }
-    // state.isLogin = sessionStorage.getItem('isLogin')
+    // state.isLogin = JSON.parse(sessionStorage.getItem('isLogin'))
     state.token = sessionStorage.getItem('token')
+    state.user = sessionStorage.getItem('user')
+    state.password = sessionStorage.getItem('password')
   }
 }
 
@@ -17,6 +19,7 @@ export default {
   state: {
 		isLogin: false,
     user: '',
-		token: ''
+    password: '',
+		token: sessionStorage.getItem('token')
 	}
 }
