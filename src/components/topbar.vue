@@ -1,5 +1,5 @@
 <template>
-  <header class="topbar" >
+  <header class="topbar">
     <div class="topbar-wrap">
       <div class="topbar-left">
         <a class="branding-icon topbar-item" href="/"><i></i></a>
@@ -56,6 +56,7 @@ export default {
     logout() {
       sessionStorage.setItem('isLogin', false)
       sessionStorage.setItem('token', '')
+      sessionStorage.setItem('user', '')
       // this.$store.commit('login')
       this.$store.commit('updateUserInfo')
       this.$router.push({ path: '/login' })
