@@ -3,7 +3,7 @@
     <div class="topbar-wrap">
       <div class="topbar-left">
         <a class="branding-icon topbar-item" href="/"><i></i></a>
-        <a class="branding-info topbar-item" href="/#/welcom"><span>{{brand}}</span></a>
+        <a class="branding-info topbar-item" href="/#/welcome"><span>{{brand}}</span></a>
       </div>
       <div class="topbar-right">
         <ui-select v-if="user.accountType === 0" v-model="teamId" class="topbar-item tenant" :class="{'tenant-u': teamType === 1, 'tenant-us': teamType === 2}">
