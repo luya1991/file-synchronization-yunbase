@@ -3,12 +3,12 @@
     <div class="menu">
       <ui-menu v-if="menu.length" :collapse="collapse" :default-active="current" >
       <template v-for="item in menu">
-        <ui-submenu  :index="item.resourceCode">
+        <ui-submenu  :index="item.resourceCode" :title="item.resourceName">
           <template slot="title">
             <ui-icon :name="item.icon"></ui-icon>
             <span>{{item.resourceName}}</span>
           </template>
-          <ui-menu-item class="ddd" @click="select(item)" v-for="item in item.children" :key="item.resourceCode" :index="item.resourceCode">
+          <ui-menu-item class="ddd" @click="select(item)" v-for="item in item.children" :key="item.resourceCode" :index="item.resourceCode" :title="item.resourceName">
             <ui-icon :name="item.icon"></ui-icon>
             <span slot="title">{{item.resourceName}}</span>
           </ui-menu-item>
@@ -116,12 +116,13 @@ nav.sidebar {
     };
     /deep/ .el-submenu {
       .el-menu-item {
-        padding-left: 46px !important;
+        padding-left: 25px !important;
       }
       &__title {
         font-size: 12px;
         height: $menu-item-height;
         line-height: $menu-item-height;
+        padding-left: 5px !important;
       }
       &.is-active {
       }
