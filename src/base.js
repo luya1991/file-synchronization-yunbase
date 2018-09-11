@@ -10,7 +10,7 @@ import sidebar from './components/sidebar'
 import menu from './store/modules/menu'
 import login from './store/modules/loginState'
 import getters from './store/getters'
-import axios from 'axios'
+// import axios from 'axios'
 
 const debug = process.env.NODE_ENV === 'development'
 

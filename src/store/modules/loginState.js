@@ -1,7 +1,5 @@
 const mutations = {
   updateUserInfo(state) {
-  	// console.log(JSON.parse(sessionStorage.getItem('isLogin')))
-  	// console.log(JSON.parse(sessionStorage.getItem('token')))
     if (sessionStorage.getItem('isLogin') === 'true') {
       state.isLogin = true
     } else {
@@ -17,9 +15,9 @@ const mutations = {
 export default {
   mutations,
   state: {
-		isLogin: false,
+    isLogin: false,
     user: '',
     password: '',
-		token: sessionStorage.getItem('token')
-	}
+    token: sessionStorage.getItem('token')
+  }
 }

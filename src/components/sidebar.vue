@@ -35,7 +35,7 @@ export default {
       toggle: 'menu/toggleCollapse'
     }),
     select(item) {
-      this.$router.push({ name: item.resourceCode})
+      this.$router.push({name: item.resourceCode})
     }
   },
   // mounted() {
