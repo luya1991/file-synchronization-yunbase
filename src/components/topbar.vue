@@ -23,7 +23,8 @@
           <ui-dropdown-menu class="user" slot="dropdown">
             <ui-dropdown-item class="user-info">
               <div class="user-info-icon">
-                {{user.realName && user.realName[0]}}
+                <!-- {{user.realName && user.realName[0]}} -->
+                {{$store.state.login.user}}
               </div>
               <div class="user-info-name">{{user.userName}}</div>
             </ui-dropdown-item>
@@ -31,7 +32,8 @@
             <ui-dropdown-item><a :href="domain + '/iam.html#/company/mine'"><ui-icon name="users"></ui-icon>我的企业</a></ui-dropdown-item>
             <ui-dropdown-item v-if="userSystem"><a :href="domain + '/iam.html#/system/company/info/'"><ui-icon name="cog"></ui-icon>系统设置</a></ui-dropdown-item> -->
             <!-- <ui-dropdown-item class="user-exit"><router-link @click="logout()" to="logout">退出账号</router-link></ui-dropdown-item> -->
-            <ui-dropdown-item class="user-exit"><a @click="logout()" style="min-height: 10px !import">退出账号</a></ui-dropdown-item>
+            <ui-dropdown-item class="user-exit"><a href="/#/welcome">返回首页</a></ui-dropdown-item>
+            <ui-dropdown-item class="user-exit"><a @click="logout()" style="min-height: 10px !important;">退出账号</a></ui-dropdown-item>
             <!-- <ui-dropdown-item class="user-exit"><a href="./logout">退出账号</a></ui-dropdown-item> -->
           </ui-dropdown-menu>
         </ui-dropdown>
@@ -56,7 +58,9 @@ export default {
     logout() {
       sessionStorage.setItem('isLogin', false)
       sessionStorage.setItem('token', '')
+      sessionStorage.setItem('Access-Token', '')
       sessionStorage.setItem('user', '')
+      sessionStorage.setItem('userInfo', '')
       // this.$store.commit('login')
       this.$store.commit('updateUserInfo')
       this.$router.push({ path: '/login' })
@@ -203,7 +207,7 @@ header.topbar {
           padding: 0;
         }
         text-align: center;
-        border-top: 1px solid #e0e6ed;
+        // border-top: 1px solid #e0e6ed;
       }
     }
   }
@@ -293,4 +297,3 @@ header.topbar {
   }
 }
 </style>
-
