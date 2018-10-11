@@ -24,7 +24,7 @@
         <ui-dropdown trigger="click">
           <div class="user" style="margin-top: 4px; cursor: pointer;">
             <div class="user-info-icon" style="background-color: #fff; color: #3e91fb;">
-              {{ userMsg.username }}
+              {{ $store.state.login.user ? $store.state.login.user : userMsg.username }}
             </div>
           </div>
           <ui-dropdown-menu class="user" slot="dropdown" style="width: 100px;">
