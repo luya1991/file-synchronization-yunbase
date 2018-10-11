@@ -6,6 +6,11 @@
         <a class="branding-info topbar-item" href="/#/welcome"><span>{{brand}}</span></a>
       </div>
       <div class="topbar-right">
+        <!-- <ul>
+          <li>
+            <img src="../../../../src/assets/user-profile.png" style="background: #f6f9f6; height: 32px; width: 32px; margin: 9px auto; text-align: center;">
+          </li>
+        </ul> -->
         <!-- <div class="user" style="margin-right: -33px; margin-top: 4px; float: left;">
           <div class="user-info-icon" style="background-color: #fff; color: #3e91fb;">
             {{ userMsg.username }}
@@ -59,7 +64,7 @@ export default {
       sessionStorage.setItem('isLogin', false)
       sessionStorage.setItem('token', '')
       sessionStorage.setItem('Access-Token', '')
-      sessionStorage.setItem('user', '')
+      // sessionStorage.setItem('user', '') // 为了在退出后不用再输入该用户名所以不清空
       sessionStorage.setItem('userInfo', '')
       // this.$store.commit('login')
       this.$store.commit('updateUserInfo')
@@ -116,6 +121,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import '../theme/variable';
+
+.topbar-right {
+  ul {
+    display: block;
+    list-style: none;
+  }
+}
 
 header.topbar {
   position: fixed;

@@ -55,10 +55,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),
-    new webpack.DllPlugin({
-      path: path.join(config.build.assetsRoot, 'manifest.json'),
-      name: '[name]'
-    }),
+    // 必须要注释掉这个行代码，因为otter-webapp中引用了该插件会出错，导致打包后运行不起来。
+    // new webpack.DllPlugin({
+    //   path: path.join(config.build.assetsRoot, 'manifest.json'),
+    //   name: '[name]'
+    // }),
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
