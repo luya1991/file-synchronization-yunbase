@@ -6,7 +6,12 @@
         <a class="branding-info topbar-item" href="/#/welcome"><span>{{brand}}</span></a>
       </div>
       <div class="topbar-right">
-        <ui-select v-if="user.accountType === 0" v-model="teamId" class="topbar-item tenant" :class="{'tenant-u': teamType === 1, 'tenant-us': teamType === 2}">
+        <!-- <div class="user" style="margin-right: -33px; margin-top: 4px; float: left;">
+          <div class="user-info-icon" style="background-color: #fff; color: #3e91fb;">
+            {{ userMsg.username }}
+          </div>
+        </div> -->
+        <!-- <ui-select v-if="user.accountType === 0" v-model="teamId" class="topbar-item tenant" :class="{'tenant-u': teamType === 1, 'tenant-us': teamType === 2}">
           <ui-option v-for="item in user.tenants" :key="item.tenantId" :label="item.tenantName" :value="item.tenantId">
             <div class="tenant-option">
               <ui-icon v-if="item.tenantType === 1" name="user"></ui-icon>
@@ -15,26 +20,21 @@
               <ui-icon name="check" v-if="teamId === item.tenantId"></ui-icon>
             </div>
           </ui-option>
-        </ui-select>
-        <ui-dropdown trigger="click" class="topbar-item">
-          <span>
-            {{user.userName}}<i class="el-icon-caret-bottom"></i>
-          </span>
-          <ui-dropdown-menu class="user" slot="dropdown">
-            <ui-dropdown-item class="user-info">
+        </ui-select> -->
+        <ui-dropdown trigger="click">
+          <div class="user" style="margin-top: 4px; cursor: pointer;">
+            <div class="user-info-icon" style="background-color: #fff; color: #3e91fb;">
+              {{ userMsg.username }}
+            </div>
+          </div>
+          <ui-dropdown-menu class="user" slot="dropdown" style="width: 100px;">
+            <!-- <ui-dropdown-item class="user-info">
               <div class="user-info-icon">
-                <!-- {{user.realName && user.realName[0]}} -->
-                {{$store.state.login.user}}
+                {{ userMsg.username }}
               </div>
-              <div class="user-info-name">{{user.userName}}</div>
-            </ui-dropdown-item>
-            <!-- <ui-dropdown-item><a :href="domain + '/iam.html#/account/info'"><ui-icon name="cogs"></ui-icon>账号设置</a></ui-dropdown-item>
-            <ui-dropdown-item><a :href="domain + '/iam.html#/company/mine'"><ui-icon name="users"></ui-icon>我的企业</a></ui-dropdown-item>
-            <ui-dropdown-item v-if="userSystem"><a :href="domain + '/iam.html#/system/company/info/'"><ui-icon name="cog"></ui-icon>系统设置</a></ui-dropdown-item> -->
-            <!-- <ui-dropdown-item class="user-exit"><router-link @click="logout()" to="logout">退出账号</router-link></ui-dropdown-item> -->
+            </ui-dropdown-item> -->
             <ui-dropdown-item class="user-exit"><a href="/#/welcome">返回首页</a></ui-dropdown-item>
-            <ui-dropdown-item class="user-exit"><a @click="logout()" style="min-height: 10px !important;">退出账号</a></ui-dropdown-item>
-            <!-- <ui-dropdown-item class="user-exit"><a href="./logout">退出账号</a></ui-dropdown-item> -->
+            <ui-dropdown-item class="user-exit" style="border-top: 1px solid #ebeef5;"><a @click="logout()" style="min-height: 10px !important;">退出账号</a></ui-dropdown-item>
           </ui-dropdown-menu>
         </ui-dropdown>
       </div>
@@ -69,7 +69,10 @@ export default {
   data() {
     return {
       brand: '中国电信数据同步与系统迁移平台',
-      domain: ''
+      domain: '',
+      userMsg: {
+        username: sessionStorage.getItem('user')
+      }
     }
   },
   computed: {
