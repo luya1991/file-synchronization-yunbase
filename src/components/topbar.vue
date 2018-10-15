@@ -24,7 +24,8 @@
         <ui-dropdown trigger="hover">
           <ul style="display: block; list-style: none; float: left; margin: 0; padding: 0;">
             <li style="position: relative; cursor: pointer; font-weight: bold;">
-              <img src="../../../../src/assets/user-profile.png" style="background: #f6f9f6; height: 32px; width: 32px; margin: 9px auto; text-align: center; float: left;border-radius: 100%;">
+              <img src="../../../../src/assets/user.png" style="height: 32px; width: 32px; margin: 9px auto; text-align: center; float: left;border-radius: 100%;">
+              <!-- <img src="../../../../src/assets/user-profile.png" style="background: #f6f9f6; height: 32px; width: 32px; margin: 9px auto; text-align: center; float: left;border-radius: 100%;"> -->
               <div style="height: 32px; line-height: 32px; margin: 9px 2px 9px 10px; text-align: center;float: left;">
                 <span style="padding: 0;">{{ $store.state.login.user ? $store.state.login.user : userMsg.username }}</span>
                 <span style="padding: 0;">,您好</span>

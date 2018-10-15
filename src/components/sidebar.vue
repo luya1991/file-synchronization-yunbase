@@ -46,7 +46,42 @@ export default {
   computed: {
     ...mapState({
       collapse: state => state.menu.collapse,
-      menu: state => state.menu.data,
+      // menu: state => state.menu.data,
+      menu: state => {
+        // 利用hidden属性来过滤需要隐藏的菜单
+        function filtNode(node) {
+          if (node.hidden) {
+            return null
+          } else {
+            if (node.children) {
+              let res = node
+              let childrenNodes = []
+              for (let i = 0; i < res.children.length; i++) {
+                var childNode = filtNode(res.children[i])
+                if (childNode) {
+                  childrenNodes.push(childNode)
+                }
+              }
+              if (childrenNodes.length > 0) {
+                res.children = childrenNodes
+              } else {
+                res.children = null
+              }
+              return res
+            } else {
+              return node
+            }
+          }
+        }
+        let menuData = []
+        for (let j = 0; j < state.menu.data.length; j++) {
+          var curNode = filtNode(state.menu.data[j])
+          if (curNode) {
+            menuData.push(curNode)
+          }
+        }
+        return menuData
+      },
       current: state =>
         state.container.current &&
         state.container.current[0] &&
