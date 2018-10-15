@@ -1,22 +1,43 @@
 {
-  "name": "yun-base",
-  "version": "1.0.0",
-  "description": "yun-base",
-  "author": "LeungZ",
-  "private": true,
-  "main": "src/main.js",
-  "scripts": {
-    "dev": "node build/dev-server.js",
-    "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+  "_from": "git+https://github.com/luya1991/file-synchronization-yunbase.git",
+  "_id": "yun-base@1.0.0",
+  "_inBundle": false,
+  "_location": "/yun-base",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "yun-base@git+https://github.com/luya1991/file-synchronization-yunbase.git",
+    "name": "yun-base",
+    "escapedName": "yun-base",
+    "rawSpec": "git+https://github.com/luya1991/file-synchronization-yunbase.git",
+    "saveSpec": "git+https://github.com/luya1991/file-synchronization-yunbase.git",
+    "fetchSpec": "https://github.com/luya1991/file-synchronization-yunbase.git",
+    "gitCommittish": null
   },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/luya1991/file-synchronization-yunbase.git#3432f570075b039f7363be7671c91765ad95ea11",
+  "_spec": "yun-base@git+https://github.com/luya1991/file-synchronization-yunbase.git",
+  "_where": "E:\\otter-webapp",
+  "author": {
+    "name": "LeungZ"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "bundleDependencies": false,
   "dependencies": {
+    "axios": "^0.17.0",
+    "pasp-ui": "^1.2.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.0",
-    "axios": "^0.17.0",
-    "pasp-ui": "^1.2.0"
+    "vuex": "^3.0.0"
   },
+  "deprecated": false,
+  "description": "yun-base",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
@@ -66,14 +87,18 @@
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"
   },
+  "dllPrefix": "http://132.246.24.15/",
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "dllPrefix": "http://132.246.24.15/"
+  "main": "src/main.js",
+  "name": "yun-base",
+  "private": true,
+  "scripts": {
+    "build": "node build/build.js",
+    "dev": "node build/dev-server.js",
+    "lint": "eslint --ext .js,.vue src"
+  },
+  "version": "1.0.0"
 }

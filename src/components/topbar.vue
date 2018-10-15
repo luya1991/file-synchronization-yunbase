@@ -6,11 +6,6 @@
         <a class="branding-info topbar-item" href="/#/welcome"><span>{{brand}}</span></a>
       </div>
       <div class="topbar-right">
-        <!-- <ul>
-          <li>
-            <img src="../../../../src/assets/user-profile.png" style="background: #f6f9f6; height: 32px; width: 32px; margin: 9px auto; text-align: center;">
-          </li>
-        </ul> -->
         <!-- <div class="user" style="margin-right: -33px; margin-top: 4px; float: left;">
           <div class="user-info-icon" style="background-color: #fff; color: #3e91fb;">
             {{ userMsg.username }}
@@ -26,18 +21,22 @@
             </div>
           </ui-option>
         </ui-select> -->
-        <ui-dropdown trigger="click">
-          <div class="user" style="margin-top: 4px; cursor: pointer;">
+        <ui-dropdown trigger="hover">
+          <ul style="display: block; list-style: none; float: left; margin: 0; padding: 0;">
+            <li style="position: relative; cursor: pointer; font-weight: bold;">
+              <img src="../../../../src/assets/user-profile.png" style="background: #f6f9f6; height: 32px; width: 32px; margin: 9px auto; text-align: center; float: left;border-radius: 100%;">
+              <div style="height: 32px; line-height: 32px; margin: 9px 2px 9px 10px; text-align: center;float: left;">
+                <span style="padding: 0;">{{ $store.state.login.user ? $store.state.login.user : userMsg.username }}</span>
+                <span style="padding: 0;">,您好</span>
+              </div>
+            </li>
+          </ul>
+          <!-- <div class="user" style="margin-top: 4px; cursor: pointer;">
             <div class="user-info-icon" style="background-color: #fff; color: #3e91fb;">
               {{ $store.state.login.user ? $store.state.login.user : userMsg.username }}
             </div>
-          </div>
+          </div> -->
           <ui-dropdown-menu class="user" slot="dropdown" style="width: 100px;">
-            <!-- <ui-dropdown-item class="user-info">
-              <div class="user-info-icon">
-                {{ userMsg.username }}
-              </div>
-            </ui-dropdown-item> -->
             <ui-dropdown-item class="user-exit"><a href="/#/welcome">返回首页</a></ui-dropdown-item>
             <ui-dropdown-item class="user-exit" style="border-top: 1px solid #ebeef5;"><a @click="logout()" style="min-height: 10px !important;">退出账号</a></ui-dropdown-item>
           </ui-dropdown-menu>
@@ -121,13 +120,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import '../theme/variable';
-
-.topbar-right {
-  ul {
-    display: block;
-    list-style: none;
-  }
-}
 
 header.topbar {
   position: fixed;
