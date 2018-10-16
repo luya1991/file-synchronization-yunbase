@@ -74,8 +74,10 @@ export default {
           }
         }
         let menuData = []
-        for (let j = 0; j < state.menu.data.length; j++) {
-          var curNode = filtNode(state.menu.data[j])
+        var originMenu = state.menu.data.slice()
+        console.log(originMenu)
+        for (let j = 0; j < originMenu.length; j++) {
+          var curNode = filtNode(originMenu[j])
           if (curNode) {
             menuData.push(curNode)
           }
