@@ -1,5 +1,7 @@
 import * as types from '../mutation-types'
 
+const OnlyShowSystemScheduleConfig = JSON.parse(sessionStorage.getItem('OnlyShowSystemScheduleConfig'))
+
 const state = {
   collapse: false,
   data: [
@@ -28,6 +30,11 @@ const state = {
         'hidden': false,
         'icon': 'cog',
         'children': null},
+      {'resourceName': 'MySQL配置',
+        'resourceCode': 'canalConfiguration',
+        'hidden': !OnlyShowSystemScheduleConfig,
+        'icon': 'cog',
+        'children': null},
       {'resourceName': 'LVS管理',
         'resourceCode': 'lvsManage',
         'hidden': false,
@@ -45,7 +52,7 @@ const state = {
         'children': null},
       {'resourceName': '数据迁移计划',
         'resourceCode': 'dataSchedule',
-        'hidden': false,
+        'hidden': OnlyShowSystemScheduleConfig,
         'icon': 'cog',
         'children': null}]},
     {'resourceName': '基础环境同步',
@@ -70,7 +77,7 @@ const state = {
         'children': null}]},
     {'resourceName': 'SQL数据库同步',
       'resourceCode': 'databaseSynchronization',
-      'hidden': false,
+      'hidden': OnlyShowSystemScheduleConfig,
       'icon': 'database',
       'children':
       [{'resourceName': '数据源配置',
@@ -105,7 +112,7 @@ const state = {
         'children': null}]},
     {'resourceName': '文件同步',
       'resourceCode': 'fileSynchronization',
-      'hidden': false,
+      'hidden': OnlyShowSystemScheduleConfig,
       'icon': 'file',
       'children':
       [{'resourceName': '文件目录配置',
@@ -120,7 +127,7 @@ const state = {
         'children': null}]},
     {'resourceName': 'NoSQL数据库同步',
       'resourceCode': 'sessionSynchronization',
-      'hidden': false,
+      'hidden': OnlyShowSystemScheduleConfig,
       'icon': 'th',
       'children':
       [{'resourceName': 'Redis配置',
@@ -135,7 +142,7 @@ const state = {
         'children': null}]},
     {'resourceName': '流量复制',
       'resourceCode': 'tcpcopy',
-      'hidden': false,
+      'hidden': OnlyShowSystemScheduleConfig,
       'icon': 'clone',
       'children':
       [{'resourceName': '流量复制配置',
@@ -165,12 +172,12 @@ const state = {
         'children': null},
       {'resourceName': '预警列表',
         'resourceCode': 'alarmList',
-        'hidden': false,
+        'hidden': OnlyShowSystemScheduleConfig,
         'icon': 'th-list',
         'children': null},
       {'resourceName': '核对监控列表',
         'resourceCode': 'checkMonitorList',
-        'hidden': false,
+        'hidden': OnlyShowSystemScheduleConfig,
         'icon': 'table',
         'children': null}]},
     {'resourceName': '系统管理',

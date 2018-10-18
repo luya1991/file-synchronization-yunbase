@@ -3,7 +3,7 @@
     <div class="topbar-wrap">
       <div class="topbar-left">
         <a class="branding-icon topbar-item" href="/"><i></i></a>
-        <a class="branding-info topbar-item" href="/#/welcome"><span>{{brand}}</span></a>
+        <a class="branding-info topbar-item" href="/#/welcome" style="padding: 0 12px;"><span>{{brand}}</span></a>
       </div>
       <div class="topbar-right">
         <!-- <div class="user" style="margin-right: -33px; margin-top: 4px; float: left;">
@@ -73,7 +73,8 @@ export default {
   },
   data() {
     return {
-      brand: '中国电信数据同步与系统迁移平台',
+      brand: JSON.parse(sessionStorage.getItem('OnlyShowSystemScheduleConfig')) ? '中国电信系统迁移平台' : '中国电信数据同步与系统迁移平台',
+      // brand: '中国电信数据同步与系统迁移平台',
       domain: '',
       userMsg: {
         username: sessionStorage.getItem('user')
@@ -146,7 +147,7 @@ header.topbar {
     }
     .topbar-left {
       float: left;
-      width: $sidebar-width + $sidebar-collapsed-width + 100px;
+      // width: $sidebar-width + $sidebar-collapsed-width + 100px;
       border-right: $topbar-border;
       height: 100%;
       display: flex;
