@@ -1,203 +1,336 @@
 import * as types from '../mutation-types'
 
-const OnlyShowSystemScheduleConfig = JSON.parse(sessionStorage.getItem('OnlyShowSystemScheduleConfig'))
-
 const state = {
   collapse: false,
   data: [
     {'resourceName': '配置管理',
       'resourceCode': 'configurationManage',
-      'hidden': false,
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'systemMove': 'systemMove',
+        'dataMove': 'dataMove'
+      },
       'icon': 'cogs',
       'children':
       [{'resourceName': 'zookeeper管理',
         'resourceCode': 'zookeeperManage',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': 'mq管理',
         'resourceCode': 'messageQueue',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': 'node管理',
         'resourceCode': 'nodeManage',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': 'agent管理',
         'resourceCode': 'agentManage',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': 'MySQL配置',
         'resourceCode': 'canalConfiguration',
-        'hidden': !OnlyShowSystemScheduleConfig,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': 'LVS管理',
         'resourceCode': 'lvsManage',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove'
+        },
         'icon': 'cog',
         'children': null}]},
     {'resourceName': '迁移计划',
       'resourceCode': 'schedule',
-      'hidden': false,
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'systemMove': 'systemMove',
+        'dataMove': 'dataMove'
+      },
       'icon': 'exchange',
       'children':
       [{'resourceName': '系统迁移计划',
         'resourceCode': 'systemSchedule',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '数据迁移计划',
         'resourceCode': 'dataSchedule',
-        'hidden': OnlyShowSystemScheduleConfig,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null}]},
     {'resourceName': '基础环境同步',
       'resourceCode': 'environmentalParmSync',
-      'hidden': false,
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'systemMove': 'systemMove',
+        'dataMove': 'dataMove'
+      },
       'icon': 'certificate',
       'children':
       [{'resourceName': '基础环境复制',
         'resourceCode': 'baseEnvClone',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '操作系统参数同步',
         'resourceCode': 'osParmSync',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '应用软件参数同步',
         'resourceCode': 'softwareParmSync',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null}]},
     {'resourceName': 'SQL数据库同步',
       'resourceCode': 'databaseSynchronization',
-      'hidden': OnlyShowSystemScheduleConfig,
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'dataMove': 'dataMove'
+      },
       'icon': 'database',
       'children':
       [{'resourceName': '数据源配置',
         'resourceCode': 'dataSourceConfiguration',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '数据表配置',
         'resourceCode': 'dataTableConfiguration',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': 'MySQL配置',
         'resourceCode': 'canalConfiguration',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': 'Oracle配置',
         'resourceCode': 'yugongConfiguration',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': 'Channel管理',
         'resourceCode': 'channelManage',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '主备配置',
         'resourceCode': 'dataMatrixConfiguration',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null}]},
     {'resourceName': '文件同步',
       'resourceCode': 'fileSynchronization',
-      'hidden': OnlyShowSystemScheduleConfig,
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'dataMove': 'dataMove'
+      },
       'icon': 'file',
       'children':
       [{'resourceName': '文件目录配置',
         'resourceCode': 'fileDirectoryConfig',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '文件同步配置',
         'resourceCode': 'pathSyncConfig',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null}]},
     {'resourceName': 'NoSQL数据库同步',
       'resourceCode': 'sessionSynchronization',
-      'hidden': OnlyShowSystemScheduleConfig,
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'dataMove': 'dataMove'
+      },
       'icon': 'th',
       'children':
       [{'resourceName': 'Redis配置',
         'resourceCode': 'redisSyncConfig',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': 'Mongodb配置',
         'resourceCode': 'mongodbSyncConfig',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null}]},
     {'resourceName': '流量复制',
       'resourceCode': 'tcpcopy',
-      'hidden': OnlyShowSystemScheduleConfig,
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'dataMove': 'dataMove'
+      },
       'icon': 'clone',
       'children':
       [{'resourceName': '流量复制配置',
         'resourceCode': 'tcpcopyConfiguration',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '监控访问时间',
         'resourceCode': 'monitorTime',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null}]},
     {'resourceName': '监控管理',
       'resourceCode': 'monitorManage',
-      'hidden': false,
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'systemMove': 'systemMove',
+        'dataMove': 'dataMove'
+      },
       'icon': 'binoculars',
       'children':
       [{'resourceName': '日志管理',
         'resourceCode': 'logManage',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '运维监控',
         'resourceCode': 'operationMonitor',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'telegram',
         'children': null},
       {'resourceName': '预警列表',
         'resourceCode': 'alarmList',
-        'hidden': OnlyShowSystemScheduleConfig,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'th-list',
         'children': null},
       {'resourceName': '核对监控列表',
         'resourceCode': 'checkMonitorList',
-        'hidden': OnlyShowSystemScheduleConfig,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'table',
         'children': null}]},
     {'resourceName': '系统管理',
       'resourceCode': 'systemManage',
-      'hidden': false,
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'systemMove': 'systemMove',
+        'dataMove': 'dataMove'
+      },
       'icon': 'cubes',
       'children':
       [{'resourceName': '权限管理',
         'resourceCode': 'permissionManage',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '系统初始化',
         'resourceCode': 'systemInitialization',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null},
       {'resourceName': '系统管理',
         'resourceCode': 'systemManage',
-        'hidden': false,
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove',
+          'dataMove': 'dataMove'
+        },
         'icon': 'cog',
         'children': null}]}
   ]

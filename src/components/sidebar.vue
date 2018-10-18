@@ -50,7 +50,7 @@ export default {
       menu: state => {
         // 利用hidden属性来过滤需要隐藏的菜单
         function filtNode(node) {
-          if (node.hidden) {
+          if (!node.classBelong.hasOwnProperty(classBelong)) {
             return null
           } else {
             if (node.children) {
@@ -76,6 +76,8 @@ export default {
         let menuData = []
         // var originMenu = state.menu.data.slice()
         // console.log(originMenu)
+        let classBelong = sessionStorage.getItem('classBelong')
+        console.log(classBelong)
         for (let j = 0; j < state.menu.data.length; j++) {
           // var curNode = filtNode(originMenu[j])
           // 不能
