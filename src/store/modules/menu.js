@@ -48,7 +48,7 @@ const state = {
         },
         'icon': 'cog',
         'children': null},
-      {'resourceName': 'MySQL配置',
+      {'resourceName': 'canal配置',
         'resourceCode': 'canalConfiguration',
         'classBelong': {
           'wholeProject': 'wholeProject',
@@ -56,36 +56,11 @@ const state = {
         },
         'icon': 'cog',
         'children': null},
-      {'resourceName': 'LVS管理',
+      {'resourceName': 'lvs管理',
         'resourceCode': 'lvsManage',
         'classBelong': {
           'wholeProject': 'wholeProject',
           'systemMove': 'systemMove'
-        },
-        'icon': 'cog',
-        'children': null}]},
-    {'resourceName': '迁移计划',
-      'resourceCode': 'schedule',
-      'classBelong': {
-        'wholeProject': 'wholeProject',
-        'systemMove': 'systemMove',
-        'dataMove': 'dataMove'
-      },
-      'icon': 'exchange',
-      'children':
-      [{'resourceName': '系统迁移计划',
-        'resourceCode': 'systemSchedule',
-        'classBelong': {
-          'wholeProject': 'wholeProject',
-          'systemMove': 'systemMove'
-        },
-        'icon': 'cog',
-        'children': null},
-      {'resourceName': '数据迁移计划',
-        'resourceCode': 'dataSchedule',
-        'classBelong': {
-          'wholeProject': 'wholeProject',
-          'dataMove': 'dataMove'
         },
         'icon': 'cog',
         'children': null}]},
@@ -124,6 +99,31 @@ const state = {
         },
         'icon': 'cog',
         'children': null}]},
+    {'resourceName': '迁移计划',
+      'resourceCode': 'schedule',
+      'classBelong': {
+        'wholeProject': 'wholeProject',
+        'systemMove': 'systemMove',
+        'dataMove': 'dataMove'
+      },
+      'icon': 'exchange',
+      'children':
+      [{'resourceName': '系统迁移计划',
+        'resourceCode': 'systemSchedule',
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'systemMove': 'systemMove'
+        },
+        'icon': 'cog',
+        'children': null},
+      {'resourceName': '数据迁移计划',
+        'resourceCode': 'dataSchedule',
+        'classBelong': {
+          'wholeProject': 'wholeProject',
+          'dataMove': 'dataMove'
+        },
+        'icon': 'cog',
+        'children': null}]},
     {'resourceName': 'SQL数据库同步',
       'resourceCode': 'databaseSynchronization',
       'classBelong': {
@@ -148,7 +148,7 @@ const state = {
         },
         'icon': 'cog',
         'children': null},
-      {'resourceName': 'MySQL配置',
+      {'resourceName': 'canal配置',
         'resourceCode': 'canalConfiguration',
         'classBelong': {
           'wholeProject': 'wholeProject',
@@ -156,7 +156,7 @@ const state = {
         },
         'icon': 'cog',
         'children': null},
-      {'resourceName': 'Oracle配置',
+      {'resourceName': 'yugong配置',
         'resourceCode': 'yugongConfiguration',
         'classBelong': {
           'wholeProject': 'wholeProject',
@@ -164,7 +164,7 @@ const state = {
         },
         'icon': 'cog',
         'children': null},
-      {'resourceName': 'Channel管理',
+      {'resourceName': 'channel管理',
         'resourceCode': 'channelManage',
         'classBelong': {
           'wholeProject': 'wholeProject',
@@ -212,7 +212,7 @@ const state = {
       },
       'icon': 'th',
       'children':
-      [{'resourceName': 'Redis配置',
+      [{'resourceName': 'redis配置',
         'resourceCode': 'redisSyncConfig',
         'classBelong': {
           'wholeProject': 'wholeProject',
@@ -220,7 +220,7 @@ const state = {
         },
         'icon': 'cog',
         'children': null},
-      {'resourceName': 'Mongodb配置',
+      {'resourceName': 'mongodb配置',
         'resourceCode': 'mongodbSyncConfig',
         'classBelong': {
           'wholeProject': 'wholeProject',

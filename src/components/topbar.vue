@@ -73,7 +73,7 @@ export default {
   },
   data() {
     return {
-      brand: JSON.parse(sessionStorage.getItem('OnlyShowSystemScheduleConfig')) ? '中国电信系统迁移平台' : '中国电信数据同步与系统迁移平台',
+      brand: JSON.parse(sessionStorage.getItem('OnlyShowSystemScheduleConfig')) ? '业务不中断系统迁移平台' : '数据同步与系统迁移平台',
       // brand: '中国电信数据同步与系统迁移平台',
       domain: '',
       userMsg: {
